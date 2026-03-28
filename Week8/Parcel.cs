@@ -3,13 +3,13 @@
 
 public class Percel : DeliveryItem
 {
-    public string dimensions { get ; private set ; }
+    public string Dimensions { get ; private set ; }
     
 // Calling the base class constructor via base ()
     public Percel(string TrackingNumber, double Weight) : base( TrackingNumber, Weight)
     {
 
-        string imensions = dimensions ;
+         Dimensions = Dimensions ;
     }
     
 // Mandatory implementation of the abstract method
@@ -24,7 +24,7 @@ public class Percel : DeliveryItem
     public override void PrintInfo()
     {
         base.PrintInfo();
-        Console.WriteLine($" Brightness : { dimensions }% " );
+        Console.WriteLine($" Brightness : { Dimensions }% " );
     }
     
 }
