@@ -1,15 +1,15 @@
 ﻿namespace Week8;
 
 
-public class Percel : DeliveryItem
+public class Parcel : DeliveryItem
 {
     public string Dimensions { get ; private set ; }
     
 // Calling the base class constructor via base ()
-    public Percel(string TrackingNumber, double Weight) : base( TrackingNumber, Weight)
+    public Parcel(string TrackingNumber, double Weight, string dimensions) : base( TrackingNumber, Weight)
     {
 
-         Dimensions = Dimensions ;
+         Dimensions = dimensions ;
     }
     
 // Mandatory implementation of the abstract method
@@ -24,7 +24,7 @@ public class Percel : DeliveryItem
     public override void PrintInfo()
     {
         base.PrintInfo();
-        Console.WriteLine($" Brightness : { Dimensions }% " );
+        Console.Write($" Dimensions : { Dimensions }% " );
     }
     
 }

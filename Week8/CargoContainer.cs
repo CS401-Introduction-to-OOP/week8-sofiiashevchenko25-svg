@@ -1,6 +1,6 @@
 ﻿namespace Week8;
 
-public class SmartRoom <T > where T : DeliveryItem
+public class CargoContainer <T > where T : DeliveryItem
 {
     private List <T > _post = new List <T >() ;
     
