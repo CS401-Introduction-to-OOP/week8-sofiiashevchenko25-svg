@@ -1,18 +1,20 @@
-﻿public abstract class SmartDevice
+﻿public abstract class DeliveryItem
 {
-    public string Name { get ; }
-    public bool IsOn { get ; protected set ; } // State can only bemodified internally or in derived classes
-    public SmartDevice ( string name )
+    public string TrackingNumber { get ; }
+    public double Weight { get ; protected set ; } // State can only bemodified internally or in derived classes
+    public DeliveryItem ( string trackingNumber, double weight )
     {
-        Name = name ;
-        IsOn = false ;
+        TrackingNumber = trackingNumber ;
+        Weight = weight;
+
     }
 // Abstract method : each device toggles in its own way
-    public abstract void Toggle () ;
+    public abstract double CalculateCost() ;
+    
 // Virtual method : base logic that can be extended
-    public virtual void PrintStatus ()
+    public virtual void PrintInfo()
     {
-        string status = IsOn ? " On " : " Off " ;
-        Console.WriteLine( $" Device : { Name } | Status : { status } ");
+        //string status = IsOn ? " On " : " Off " ;
+        Console.WriteLine( $" Number : { TrackingNumber } | Weight : { Weight } ");
     }
 }
